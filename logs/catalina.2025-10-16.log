@@ -1,0 +1,154 @@
+16-Oct-2025 19:36:52.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.44
+16-Oct-2025 19:36:52.947 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Aug 4 2025 13:14:17 UTC
+16-Oct-2025 19:36:52.948 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.44.0
+16-Oct-2025 19:36:52.948 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+16-Oct-2025 19:36:52.948 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-Oct-2025 19:36:52.949 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-Oct-2025 19:36:52.949 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\ISP63-4\.jdks\corretto-17.0.16
+16-Oct-2025 19:36:52.950 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.16+8-LTS
+16-Oct-2025 19:36:52.950 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
+16-Oct-2025 19:36:52.950 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 19:36:52.951 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 19:36:52.986 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Oct-2025 19:36:52.986 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-Oct-2025 19:36:52.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-Oct-2025 19:36:52.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Oct-2025 19:36:52.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Oct-2025 19:36:52.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 19:36:53.000 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 19:36:53.002 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\temp
+16-Oct-2025 19:36:53.002 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\logging.properties
+16-Oct-2025 19:36:53.002 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Oct-2025 19:36:53.003 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.1\lib\idea_rt.jar=62598
+16-Oct-2025 19:36:53.004 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-Oct-2025 19:36:53.040 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\ISP63-4\.jdks\corretto-17.0.16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ISP63-4\AppData\Local\Microsoft\WindowsApps;C:\Users\ISP63-4\AppData\Roaming\npm;C:\Users\ISP63-4\AppData\Local\Programs\Microsoft VS Code\bin;.]
+16-Oct-2025 19:36:53.925 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8082"]
+
+16-Oct-2025 19:36:54.026 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Server initialization in [2254] milliseconds
+16-Oct-2025 19:36:54.217 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-Oct-2025 19:36:54.217 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+16-Oct-2025 19:36:54.296 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml]
+16-Oct-2025 19:36:59.496 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-Oct-2025 19:36:59.842 ADVERTENCIA [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [113] milliseconds.
+16-Oct-2025 19:36:59.942 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml] has finished in [5.645] ms
+16-Oct-2025 19:36:59.960 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 19:37:00.142 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [6115] milliseconds
+16-Oct-2025 20:31:48.788 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:31:49.538 INFORMACIÓN [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-Oct-2025 20:31:50.419 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:31:50.498 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:32:02.432 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.44
+16-Oct-2025 20:32:02.449 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Aug 4 2025 13:14:17 UTC
+16-Oct-2025 20:32:02.449 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.44.0
+16-Oct-2025 20:32:02.450 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+16-Oct-2025 20:32:02.453 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-Oct-2025 20:32:02.453 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-Oct-2025 20:32:02.453 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\ISP63-4\.jdks\corretto-17.0.16
+16-Oct-2025 20:32:02.454 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.16+8-LTS
+16-Oct-2025 20:32:02.455 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
+16-Oct-2025 20:32:02.455 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 20:32:02.455 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 20:32:02.500 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Oct-2025 20:32:02.501 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-Oct-2025 20:32:02.501 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-Oct-2025 20:32:02.501 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Oct-2025 20:32:02.502 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Oct-2025 20:32:02.502 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 20:32:02.503 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 20:32:02.503 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\temp
+16-Oct-2025 20:32:02.504 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\logging.properties
+16-Oct-2025 20:32:02.504 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Oct-2025 20:32:02.504 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.1\lib\idea_rt.jar=63086
+16-Oct-2025 20:32:02.504 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-Oct-2025 20:32:02.573 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\ISP63-4\.jdks\corretto-17.0.16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ISP63-4\AppData\Local\Microsoft\WindowsApps;C:\Users\ISP63-4\AppData\Roaming\npm;C:\Users\ISP63-4\AppData\Local\Programs\Microsoft VS Code\bin;.]
+16-Oct-2025 20:32:03.612 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8082"]
+
+16-Oct-2025 20:32:03.674 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Server initialization in [2349] milliseconds
+16-Oct-2025 20:32:04.054 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-Oct-2025 20:32:04.056 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+16-Oct-2025 20:32:04.088 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml]
+16-Oct-2025 20:32:09.584 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-Oct-2025 20:32:10.082 ADVERTENCIA [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [333] milliseconds.
+16-Oct-2025 20:32:10.153 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml] has finished in [6.064] ms
+16-Oct-2025 20:32:10.169 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:32:10.356 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [6682] milliseconds
+16-Oct-2025 20:36:03.684 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:36:04.049 INFORMACIÓN [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-Oct-2025 20:36:04.414 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:36:04.456 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:36:12.407 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.44
+16-Oct-2025 20:36:12.418 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Aug 4 2025 13:14:17 UTC
+16-Oct-2025 20:36:12.419 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.44.0
+16-Oct-2025 20:36:12.419 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+16-Oct-2025 20:36:12.419 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-Oct-2025 20:36:12.419 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-Oct-2025 20:36:12.420 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\ISP63-4\.jdks\corretto-17.0.16
+16-Oct-2025 20:36:12.420 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.16+8-LTS
+16-Oct-2025 20:36:12.420 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
+16-Oct-2025 20:36:12.420 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 20:36:12.420 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 20:36:12.451 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Oct-2025 20:36:12.451 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-Oct-2025 20:36:12.452 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-Oct-2025 20:36:12.452 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Oct-2025 20:36:12.452 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Oct-2025 20:36:12.452 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 20:36:12.453 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 20:36:12.453 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\temp
+16-Oct-2025 20:36:12.453 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\logging.properties
+16-Oct-2025 20:36:12.454 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Oct-2025 20:36:12.455 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.1\lib\idea_rt.jar=63113
+16-Oct-2025 20:36:12.455 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-Oct-2025 20:36:12.479 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\ISP63-4\.jdks\corretto-17.0.16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ISP63-4\AppData\Local\Microsoft\WindowsApps;C:\Users\ISP63-4\AppData\Roaming\npm;C:\Users\ISP63-4\AppData\Local\Programs\Microsoft VS Code\bin;.]
+16-Oct-2025 20:36:13.687 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8082"]
+
+16-Oct-2025 20:36:13.749 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Server initialization in [2219] milliseconds
+16-Oct-2025 20:36:13.876 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-Oct-2025 20:36:13.876 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+16-Oct-2025 20:36:13.977 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml]
+16-Oct-2025 20:36:18.577 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-Oct-2025 20:36:18.891 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml] has finished in [4.908] ms
+16-Oct-2025 20:36:18.909 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:36:19.032 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [5282] milliseconds
+16-Oct-2025 20:37:38.016 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:37:38.322 INFORMACIÓN [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-Oct-2025 20:37:38.354 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:37:38.368 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:37:45.965 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.44
+16-Oct-2025 20:37:45.982 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Aug 4 2025 13:14:17 UTC
+16-Oct-2025 20:37:45.982 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.44.0
+16-Oct-2025 20:37:45.982 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+16-Oct-2025 20:37:45.984 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-Oct-2025 20:37:45.984 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-Oct-2025 20:37:45.985 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\ISP63-4\.jdks\corretto-17.0.16
+16-Oct-2025 20:37:45.985 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.16+8-LTS
+16-Oct-2025 20:37:45.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
+16-Oct-2025 20:37:45.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 20:37:45.987 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 20:37:46.033 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Oct-2025 20:37:46.034 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-Oct-2025 20:37:46.036 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-Oct-2025 20:37:46.036 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Oct-2025 20:37:46.036 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Oct-2025 20:37:46.037 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.1
+16-Oct-2025 20:37:46.040 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl
+16-Oct-2025 20:37:46.040 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\temp
+16-Oct-2025 20:37:46.041 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\logging.properties
+16-Oct-2025 20:37:46.041 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Oct-2025 20:37:46.041 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.1\lib\idea_rt.jar=63124
+16-Oct-2025 20:37:46.042 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-Oct-2025 20:37:46.056 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\ISP63-4\.jdks\corretto-17.0.16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ISP63-4\AppData\Local\Microsoft\WindowsApps;C:\Users\ISP63-4\AppData\Roaming\npm;C:\Users\ISP63-4\AppData\Local\Programs\Microsoft VS Code\bin;.]
+16-Oct-2025 20:37:47.964 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8082"]
+
+16-Oct-2025 20:37:48.024 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Server initialization in [2694] milliseconds
+16-Oct-2025 20:37:48.134 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-Oct-2025 20:37:48.134 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+16-Oct-2025 20:37:48.159 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml]
+16-Oct-2025 20:37:52.011 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-Oct-2025 20:37:52.403 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\ISP63-4\Downloads\JulietaProgl\ProyectoFotosProgl\conf\Catalina\localhost\ProyectoFotosProgI.xml] has finished in [4.240] ms
+16-Oct-2025 20:37:52.421 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:37:52.579 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [4554] milliseconds
+16-Oct-2025 20:40:48.290 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:40:48.642 INFORMACIÓN [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-Oct-2025 20:40:49.022 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+16-Oct-2025 20:40:49.214 INFORMACIÓN [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
