@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'atwriter';
+    src: url('../fuentes/atwriter.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BohemianSoul';
+    src: url('../fuentes/Bohemian\ Soul.otf');
+}
+.satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+body{
+    background-color:rgb(230, 140, 89);
+    margin:0;
+    padding:0;
+
+}
+header{
+    background-image: url(../images/atardecerGirasol.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    color: #DAD7CD;
+    position: relative;
+}
+
+.oscurecer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+.onlynav{
+    height: 120px !important;
+}
+header .nav{
+    width: 100%;
+    min-height: 120px;
+    background-color: rgba(255, 255, 255, 0.014);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+}
+header .rellenarNav{
+    background-color:#3A5A40 !important;
+}
+
+header .nav .titulo img{
+    height: 80px;
+    margin: 30px;
+    padding-left: 40px;
+
+}
+
+header .nav .menu{
+    font-size: 25px;
+    font-family:"Satisfy", cursive;
+    width: 50%;
+    margin: 40px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 40px;
+    z-index: 3;
+}
+header .menu a{
+    margin: 0 5px;
+    letter-spacing: 1.1px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #DAD7CD;
+}
+header .menu a:hover{
+
+    color: #a3b18a;
+    transition: all 0.3s ease-in;
+}
+
+header .imagenSuperior{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px);
+
+}
+
+header .imagenSuperior h1{
+    font-family:"Satisfy", cursive;
+    font-size:55px;
+    color: #DAD7CD;
+
+}
+
+
+.espacioFrase{
+    background-color:#3A5A40;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.espacioFrase h1{
+    margin: 0%;
+    color: beige;
+    padding-top: 10px;
+    font-family: "BohemianSoul", serif;
+  /*  animation:mover-izquierda-derecha 2s 2;
+    animation-fill-mode:forwards;*/
+}
+@keyframes mover-izquierda-derecha{
+    from{
+        transform:translateX(-100px)
+    }
+    to{
+        transform: translateX(10px);
+    }
+}
+
+
+.galeria{
+    background-color: #DAD7CD;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.galeria h2{
+    color: #3A5A40;
+    margin: 0%;
+    font-family: "Satisfy", cursive;
+    font-size: 45px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+.galeria .carrete{
+    padding: 0 50px;
+    height: 50vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+.galeria .carrete .imagenes{
+
+    width: 300px;
+    height: 300px;
+    margin: 0 25px;
+
+
+}
+.galeria .carrete .imagenes img{
+    width: 100%;
+    height: 100%;
+    margin: 0 25px;
+    border: 1px solid black;
+    border-radius:5px;
+    object-fit: cover;
+
+
+}
+
+.sobreMi{
+    background-color: beige;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.sobreMi .informacion{
+    background-color: #A3B18A;
+    width:80%;
+    height: 80vh;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    color: #344E41;
+}
+.sobreMi .informacion img{
+    width: 243px;
+    height: 400px;
+    padding: 20px;
+    margin-top: 20px;
+    object-fit: cover;
+}
+.sobreMi .informacion .infoDescripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding: 10px 40px;
+
+}
+
+.sobreMi .informacion .infoDescripcion p{
+    font-family: "Satisfy", cursive;
+    font-size: 30px;
+}
+.sobreMi .paraPorfolio{
+    font-size: 20px;
+    font-family:"BohemianSoul", serif;
+    text-align: start;
+    align-items: flex-start;
+    top: 40px;
+    width: 100%;
+    padding: 20px 0px;
+
+}
+.sobreMi .paraPorfolio ul{
+    font-size: 15px;
+    font-family: "BohemianSoul", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+footer{
+    background-color:#3A5A40;
+    width:100%;
+    height:60vh;
+    margin:0%;
+
+}
+footer .pieDePagina{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items: center;
+    color: #DAD7CD;
+
+    font-family: 'Courier New', Courier, monospace;
+    padding: 80px;
+
+}
+footer .pieDePagina .logosPiePag img{
+    width: 120px;
+    height: 120px;
+}
+footer .pieDePagina .contacto p h3{
+    font-family:'atwriter', sans-serif;
+    font-size: 10px;
+}
+footer .pieDePagina .contacto i{
+    font-size: 20px;
+}
+footer .pieDePagina .contacto a {
+    color: #DAD7CD;
+    text-decoration: none;
+}
+
+
+.seccionGaleria{
+    background-color:#a3b18a;
+    min-height: 100vh !important;
+    position: relative;
+    width: 100%;
+
+}
+.seccionGaleria .galeria2 {
+    background-color:#DAD7CD;
+    width: 100%;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.seccionGaleria .galeria2 h2{
+    margin: 0%;
+    font-size: 30px;
+    padding: 30px;
+    color: #3A5A40;
+    margin: 0%;
+    font-family: "Satisfy", cursive;
+    font-size: 45px;
+    font-weight: 600;
+    padding-bottom: 50px;
+
+}
+
+.seccionGaleria .galeria2 .imagenes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.seccionGaleria .galeria2 .imagenes img{
+    width: 300px;
+    height: 300px;
+    padding: 8px;
+    object-fit: cover;
+
+}
