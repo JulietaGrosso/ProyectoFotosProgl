@@ -6,7 +6,8 @@
 
      <div class="seccionGaleria">
             <div class="galeria2" data-anijs="if: scroll, on: window, do: animate__fadeIn animated, before: $scrollReveal repeat">
-                <h2>Galery</h2>
+                <h2><%= request.getAttribute("mensaje") %></h2>
+
                         <div class="imagenes">
                             <img src="./images/girasoles.jpg" alt=""/>
                             <img src="./images/donato.JPG" alt=""/>

@@ -1,23 +1,24 @@
-package org.progl;
+package org.progl.servlets;
 
-
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.Date;
 
-public class HelloServlet extends HttpServlet {
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-  @Override
+@WebServlet("/galeria")
+public class GaleriaServlet extends HttpServlet {
+
   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
     req.setAttribute("mensaje", "¡Hola desde el Servlet ProgI IES63!");
     req.setAttribute("fecha", new Date());
-    RequestDispatcher rd = req.getRequestDispatcher("/hello.jsp");
+    RequestDispatcher rd = req.getRequestDispatcher("/galeria.jsp");
     rd.forward(req, res);
   }
 }

@@ -24,4 +24,7 @@ public class Imagen {
   public void setFoto(String foto) {
     this.foto = foto;
   }
+
+
+  
 }

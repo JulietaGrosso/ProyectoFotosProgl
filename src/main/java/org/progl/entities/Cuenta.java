@@ -1,12 +1,12 @@
 package org.progl.entities;
 
-public class Administrador {
+public class Cuenta {
   private int id;
   private String nombre;
   private String correo;
   private String contrasena;
 
-  public Administrador(int id, String nombre, String correo, String contrasena) {
+  public Cuenta(int id, String nombre, String correo, String contrasena) {
     this.id = id;
     this.nombre = nombre;
     this.correo = correo;

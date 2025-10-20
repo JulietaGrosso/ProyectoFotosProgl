@@ -1,0 +1,6 @@
+## Instalación
+
+- mvn clean install
+
+### Ejecución del proyecto
+- mvn package cargo:run

@@ -21,7 +21,7 @@
                  </div>
                 <div class="menu">
                     <a href="/">Home</a>
-                    <a href="/galeria.html">Galery</a>
+                    <a href="/galeria">Galery</a>
                     <a href="#AboutMe">About Me</a>
                     <a href="#elContacto">Contact</a>
                  </div>

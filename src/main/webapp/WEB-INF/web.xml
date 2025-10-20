@@ -10,26 +10,24 @@
 
     <display-name>Archetype Created Web Application</display-name>
     <!--nombre del servlet y paquete donde se encuentra-->
+<!--
     <servlet>
       <servlet-name>HelloServlet</servlet-name>
-      <servlet-class>org.progI.servlets.HelloServlet</servlet-class>
+      <servlet-class>org.progl.servlets.HelloServlet</servlet-class>
     </servlet>
-    <!--nombre del servlet y ruta url-->
     <servlet-mapping>
       <servlet-name>HelloServlet</servlet-name>
       <url-pattern>/hello</url-pattern>
     </servlet-mapping>
-
-
     <servlet>
       <servlet-name>seAdministrador</servlet-name>
       <servlet-class>org.progI.servlets.seAdministrador</servlet-class>
     </servlet>
-    <!--nombre del servlet y ruta url-->
     <servlet-mapping>
       <servlet-name>seAdministrador</servlet-name>
       <url-pattern>/seAdministrador</url-pattern>
     </servlet-mapping>
+    -->
   <!-- Página de bienvenida -->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
