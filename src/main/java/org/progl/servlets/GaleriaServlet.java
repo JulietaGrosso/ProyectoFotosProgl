@@ -3,6 +3,10 @@ package org.progl.servlets;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+
+import org.progl.daos.ImagenImpl;
+import org.progl.entities.Imagen;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -16,8 +20,9 @@ public class GaleriaServlet extends HttpServlet {
 
   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-    req.setAttribute("mensaje", "¡Hola desde el Servlet ProgI IES63!");
-    req.setAttribute("fecha", new Date());
+    ImagenImpl imagenImpl = new ImagenImpl();
+    List<Imagen> listaImagenes = imagenImpl.getAll();
+    req.setAttribute("imagenes", listaImagenes);
     RequestDispatcher rd = req.getRequestDispatcher("/galeria.jsp");
     rd.forward(req, res);
   }

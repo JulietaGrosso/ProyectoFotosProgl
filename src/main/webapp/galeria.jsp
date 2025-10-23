@@ -6,27 +6,37 @@
 
      <div class="seccionGaleria">
             <div class="galeria2" data-anijs="if: scroll, on: window, do: animate__fadeIn animated, before: $scrollReveal repeat">
-                <h2><%= request.getAttribute("mensaje") %></h2>
+                <h2>Galery</h2>
 
-                        <div class="imagenes">
-                            <img src="./images/girasoles.jpg" alt=""/>
-                            <img src="./images/donato.JPG" alt=""/>
-                            <img src="./images/musgo.jpg" alt=""/>
-                            <img src="./images/reflejoenelcamino.jpg" alt=""/>
-                            <img src="./images/johnny.jpg" alt=""/>
-                            <img src="./images/puerto.jpg" alt=""/>
-                            <img src="./images/caballo.jpg" alt=""/>
-                            <img src="./images/atardecer.jpg" alt=""/>
-                            <img src="./images/maxi.jpg" alt=""/>
-                            <img src="./images/plantaHuerta.jpg" alt=""/>
-                            <img src="./images/molinosf.jpg" alt=""/>
-                            <img src="./images/luz.jpg" alt=""/>
-                            <img src="./images/palmeras.jpg" alt=""/>
-                            <img src="./images/japones.jpg" alt=""/>
-                            <img src="./images/plantapink.jpg"alt=""/>
-                            <img src="./images/pinos.jpg" alt=""/>
-
-                        </div>
+                <div class="imagenes">
+                     <c:forEach items="${imagenes}" var="item">
+                         <div class="imagen imggalery">
+                              <img src="/mostrarFoto?foto=${item.foto}" alt="${item.nombre} ${item.alt}"/>
+                              <c:if test="${sessionScope.logueado != null}">
+                                        <div class="action">
+                                        <a href="/editar?id=${item.id}">
+                                        <i class="fa-solid fa-pencil"></i>
+                                        </a>
+                                        <i class="fa-solid fa-trash" onclick="eliminarImagen(${item.id})"></i>
+                                   </div>
+                              </c:if>
+                              
+                         </div>
+                     </c:forEach>
+                    
+                     
+                    </div>
+                    <c:if test="${sessionScope.logueado != null}">
+                      <a class="uploadbtn" href="/subir">Subir Imágen</a>
+                   </c:if>
+                       
            </div>
      </div>
+     <script>
+          async function eliminarImagen(id){
+             await fetch("/borrar?id=" + id , {method:"DELETE"});
+                 window.location.reload();
+
+          }
+     </script>
 <%@ include file="footer.jsp" %>

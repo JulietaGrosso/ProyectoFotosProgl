@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public interface AdminConexiones {
-  public static Connection ObtenerConexion () {
+    static Connection obtenerConexion(){
     //4 datos de conexion
     String dbDriver= "com.mysql.cj.jdbc.Driver";
     // cadena conexion a mi BD
     String dbCadenaConexion=
-        "jdbc:mysql://localhost:3306/progautos";
+        "jdbc:mysql://localhost:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";;
     // nom usuarioBD
     String dbUsuario="root";
     // pass bd

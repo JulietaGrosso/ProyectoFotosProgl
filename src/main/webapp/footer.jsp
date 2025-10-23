@@ -11,7 +11,7 @@
                 This page is about personal photography.
             </p>
             <h3>Contact</h3>
-            <a href="https://www.instagram.com/julietagrosso_/" target="_blank">
+            <a href="https://www.instagram.com/julietagrosso_/" target="_blank" aria-label="instagram">
                 <i class="fa-brands fa-instagram"></i>
             </a>
             <i class="fa-solid fa-mobile-screen-button"></i>

@@ -14,45 +14,24 @@
            <h2>Galery</h2>
            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
                <div class="carousel-inner">
-                 <div class="carousel-item active">
-                   <div class="carrete">
-                       <div class="imagenes">
-                            <img src="./images/girasoles.jpg" alt="foto1">
-                       </div>
-                       <div class="imagenes">
-                           <img src="./images/donato.JPG" alt="foto1">
-                      </div>
-                       <div class="imagenes">
-                            <img src="./images/musgo.jpg" alt="foto1">
-                       </div>
+               
+                    <c:forEach items="${imagenes}" var="Lista">
+                          <div class="carousel-item active">
+                              <div class="carrete">
+                                    <c:forEach items="${Lista}" var="imagen">
+                                        <div class="imagenes">
+                                        <img src="/mostrarFoto?foto=${imagen.foto}" alt="${imagen.alt}"/>
+                                        </div>
+                                   </c:forEach>
+                                   
+                                  
+                  </div>
                  </div>
-                 </div>
-                 <div class="carousel-item">
-                   <div class="carrete">
-                       <div class="imagenes">
-                            <img src="./images/reflejoenelcamino.jpg" alt="foto1">
-                       </div>
-                       <div class="imagenes">
-                           <img src="./images/johnny.JPG" alt="foto1">
-                      </div>
-                       <div class="imagenes">
-                            <img src="./images/puerto.jpg" alt="foto1">
-                       </div>
-                 </div>
-                 </div>
-                 <div class="carousel-item">
-                   <div class="carrete">
-                       <div class="imagenes">
-                            <img src="./images/caballo.jpg" alt="foto1">
-                       </div>
-                       <div class="imagenes">
-                           <img src="./images/abeja.jpg" alt="foto1">
-                      </div>
-                       <div class="imagenes">
-                            <img src="./images/pinos.JPG" alt="foto1">
-                       </div>
-                 </div>
-                 </div>
+
+                       
+                    </c:forEach>
+
+                
                </div>
                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -17,13 +17,21 @@
     <header class="onlynav">
         <div class="nav rellenarNav">
             <div class="titulo">
-                 <a href="/"><img src="./images/logob2.png" alt="logo"></a>
+                 <a href="/inicio"><img src="./images/logob2.png" alt="logo"></a>
              </div>
             <div class="menu">
-                <a href="/">Home</a>
+                <a href="/inicio">Home</a>
                 <a href="/galeria">Galery</a>
                 <a href="/#AboutMe">About Me</a>
                 <a href="/#elContacto">Contact</a>
+                <c:if test="${sessionScope.logueado == null}">
+                   <a href="/login">Login</a>
+                </c:if>
+                <c:if test="${sessionScope.logueado != null}">
+                   <a href="/logout">Logout</a>
+                </c:if>
+
+
              </div>
     </div>
     </header>

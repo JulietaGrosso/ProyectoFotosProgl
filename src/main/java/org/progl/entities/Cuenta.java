@@ -6,6 +6,11 @@ public class Cuenta {
   private String correo;
   private String contrasena;
 
+  public Cuenta(){
+    
+  }
+
+
   public Cuenta(int id, String nombre, String correo, String contrasena) {
     this.id = id;
     this.nombre = nombre;

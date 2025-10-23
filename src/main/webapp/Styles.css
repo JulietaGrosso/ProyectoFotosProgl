@@ -324,3 +324,51 @@ footer .pieDePagina .contacto a {
     object-fit: cover;
 
 }
+
+.uploadbtn {
+    margin-top: 12px;
+    background: none;
+    border-radius: 5px;
+    padding: 4px 18px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+}
+
+.loginform button {
+    margin-top: 12px;
+    background: none;
+    border-radius: 5px;
+    padding: 4px 18px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+}
+
+.loginForm label {
+    color: #3A5A40;
+    font-weight: 600;
+}
+
+.loginForm input {
+    border-radius: 5px;
+    border: none;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 4px 18px;
+    /* background: #dee9e0; */
+}
+
+
+.imggalery {
+    position: relative;
+
+}
+    .imggalery .action {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #90d590;
+        padding: 5px 10px;
+        border-radius: 12px;
+    }
