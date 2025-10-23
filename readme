@@ -31,9 +31,6 @@ en la linea 13 asignar las credenciales correctas de la base de datos a utilixar
 "jdbc:mysql://localhost:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";;
 ```
 
-```js
-mvn cargo:run
-```
 
 # Ejecución script base de datos
 
@@ -75,3 +72,6 @@ CREATE TABLE `imagen` (
 # Ejecución
 
 Para levantar el presente proyecto, se requiere ejecutar el siguiente comando: 
+```js
+mvn cargo:run
+```
