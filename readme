@@ -1,6 +1,77 @@
-## Instalación
 
+# Proyecto de Fotografía
+
+Este proyecto es una aplicación web desarrollada en Java con JSP y MySQL, que permite administrar una galería de fotografías.
+Cuenta con un único usuario administrador, quien puede:
+
+- Iniciar sesión con su cuenta.
+
+- Subir nuevas imágenes a la galería.
+
+- Editar o eliminar imágenes existentes.
+
+- Visualizar todas las imágenes almacenadas.
+
+- Los visitantes del sitio pueden ver la galería pero no modificarla.
+
+
+
+# Instalación
+
+Para instalar el presente proyecto, se requiere ejecutar el siguiente comando: 
+
+```js
 - mvn clean install
+```
 
-### Ejecución del proyecto
-- mvn package cargo:run
+Mofificar el siguiente archivo con las credenciales que correspondan:
+```java
+src\main\java\org\progl\interfaces\AdminConexiones.java
+en la linea 13 asignar las credenciales correctas de la base de datos a utilixar.
+"jdbc:mysql://localhost:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";;
+```
+
+```js
+mvn cargo:run
+```
+
+# Ejecución script base de datos
+
+Para el correcto funcionamiento del proyecto se requiere crear la base de datos y tablas con el siguiente script:
+
+```sql
+CREATE DATABASE IF NOT EXISTS proyectosfotos
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+
+USE proyectosfotos;
+
+DROP TABLE IF EXISTS `cuenta`;
+
+CREATE TABLE `cuenta` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(100) NOT NULL,
+  `contrasena` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insertar cuenta del administrador
+INSERT INTO `cuenta` (`nombre`, `correo`, `contrasena`)
+VALUES ('Julieta', 'julieta.grosso02@gmail.com', '1234');
+
+
+DROP TABLE IF EXISTS `imagen`;
+
+CREATE TABLE `imagen` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `foto` VARCHAR(255) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `alt` VARCHAR(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+# Ejecución
+
+Para levantar el presente proyecto, se requiere ejecutar el siguiente comando: 
