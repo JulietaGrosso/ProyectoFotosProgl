@@ -15,7 +15,7 @@
                               <c:if test="${sessionScope.logueado != null}">
                                         <div class="action">
                                         <a href="/editar?id=${item.id}">
-                                        <i class="fa-solid fa-pencil"></i>
+                                        <i class="fa-solid fa-pencil" ></i>
                                         </a>
                                         <i class="fa-solid fa-trash" onclick="eliminarImagen(${item.id})"></i>
                                    </div>

@@ -7,8 +7,8 @@
         <div class="seccionGaleria">
             <div class="galeria2" data-anijs="if: scroll, on: window, do: animate__fadeIn animated, before: $scrollReveal repeat">
                 
-                 <form method="post" enctype="multipart/form-data">
-                    <label for="correo">Foto</label><br>
+                 <form method="post" enctype="multipart/form-data" class="formSubir">
+                    <label for="foto">Foto</label><br>
                     <input type="file" id="foto" name="foto"/>
                     <br>
                     <label for="nombre">Nombre</label><br>
@@ -17,7 +17,7 @@
                      <label for="alt">Alt</label><br>
                     <input type="text" id="alt" name="alt"/>
                     <br>
-                    <button type="submit">Subir Imagen</button>
+                    <button type="submit" class="btnSubir">Subir Imagen</button>
                  </form>         
            </div>
      </div>

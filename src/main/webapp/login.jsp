@@ -10,9 +10,11 @@
                  <form method="post" class="loginform" >
                     <label for="correo">Correo</label><br>
                     <input type="text" id="correo" name="correo"></imput>
+                    <span class="mensaje-error"></span>
                     <br>
                     <label for="contrasena">Contraseña</label><br>
-                    <input type="text" id="contrasena" name="contrasena"></imput>
+                    <input type="password" id="contrasena" name="contrasena"></imput>
+                    <span class="mensaje-error"></span>
                     <br>
                     <button type="submit">Ingresar</button>
                  </form>         

@@ -204,7 +204,7 @@ header .imagenSuperior h1{
     display: flex;
     flex-direction:row;
     justify-content: space-around;
-    color: #344E41;
+    color: #2F422E;
 }
 .sobreMi .informacion img{
     width: 243px;
@@ -324,6 +324,26 @@ footer .pieDePagina .contacto a {
     object-fit: cover;
 
 }
+.seccionGaleria .formEditar input{
+    border-radius: 5px;
+    border: none;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 4px 18px;
+}
+.seccionGaleria .formEditar label{
+      color: #3A5A40;
+    font-weight: 600;
+}
+.seccionGaleria .formEditar button{
+     margin-top: 12px;
+    background: none;
+    border-radius: 5px;
+    padding: 4px 18px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+}
 
 .uploadbtn {
     margin-top: 12px;
@@ -358,7 +378,49 @@ footer .pieDePagina .contacto a {
     padding: 4px 18px;
     /* background: #dee9e0; */
 }
+.formSubir button {
+    margin-top: 12px;
+    background: none;
+    border-radius: 5px;
+    padding: 4px 18px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+}
+.formSubir label {
+    color: #3A5A40;
+    font-weight: 600;
+}
 
+.formSubir input {
+    border-radius: 5px;
+    border: none;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 4px 18px;
+    /* background: #dee9e0; */
+}
+.formSubir input[type="file"] {
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+.btnSubir {
+    display: inline-block;
+    margin-top: 8px;
+    background: none;
+    border-radius: 5px;
+    padding: 4px 18px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnSubir:hover {
+    background-color: #3A5A40;
+    color: white;
+}
 
 .imggalery {
     position: relative;
