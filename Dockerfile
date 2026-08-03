@@ -23,13 +23,14 @@ FROM tomcat:10.1-jdk17
 # Limpiar las apps por defecto de Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
+# Crear directorio para subir fotos
+RUN mkdir -p /app/uploads
+
 # Copiar el WAR generado desde la etapa build
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Variables de entorno para la base de datos
-ENV DB_URL=jdbc:mysql://host.docker.internal:3306/proyfotos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-ENV DB_USERNAME=root
-ENV DB_PASSWORD=root
+# Variable de entorno: ruta donde se guardan las fotos subidas
+ENV UPLOAD_DIR=/app/uploads
 
 # Exponer puerto
 EXPOSE 8080

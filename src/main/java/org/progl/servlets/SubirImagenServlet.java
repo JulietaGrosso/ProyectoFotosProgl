@@ -83,8 +83,11 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws Servle
                 return;
             }
 
-            // Carpeta donde se guardarán las imágenes
-            String uploadPath = "C:\\proyfotos";
+            // Carpeta donde se guardarán las imágenes (configurable por variable de entorno)
+            String uploadPath = System.getenv("UPLOAD_DIR");
+            if (uploadPath == null || uploadPath.isEmpty()) {
+                uploadPath = System.getProperty("catalina.base") + File.separator + "uploads";
+            }
 
             // Crear la carpeta si no existe
             File uploadDir = new File(uploadPath);

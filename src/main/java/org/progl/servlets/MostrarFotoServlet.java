@@ -25,8 +25,11 @@ public class MostrarFotoServlet extends HttpServlet {
             return;
         }
 
-        //  Ruta absoluta donde se guardan las fotos
-        String uploadPath = "C:\\proyfotos";
+        //  Ruta absoluta donde se guardan las fotos (configurable por variable de entorno)
+        String uploadPath = System.getenv("UPLOAD_DIR");
+        if (uploadPath == null || uploadPath.isEmpty()) {
+            uploadPath = System.getProperty("catalina.base") + File.separator + "uploads";
+        }
         File archivo = new File(uploadPath, nombreArchivo);
 
         // Verificar que el archivo exista
