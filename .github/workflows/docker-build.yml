@@ -1,0 +1,30 @@
+name: Build and Push Docker Image to Custom Registry
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Login al registry
+      - name: Login to Registry
+        run: |
+          echo "AG#RPATA" | docker login registry.qrgross.com -u agropatria --password-stdin
+
+      # 3. Build de la imagen
+      - name: Build Docker image
+        run: |
+          docker build -t registry.qrgross.com/proyfotos-api:latest .
+
+      # 4. Push al registry
+      - name: Push Docker image
+        run: |
+          docker push registry.qrgross.com/proyfotos-api:latest

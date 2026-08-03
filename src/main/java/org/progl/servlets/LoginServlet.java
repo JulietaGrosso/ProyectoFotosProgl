@@ -1,11 +1,13 @@
 package org.progl.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.Date;
 
 import org.progl.daos.LoginImpl;
 import org.progl.entities.Cuenta;
+import org.progl.exceptions.LoginException;
+import utils.PasswordUtils;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -26,30 +28,44 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws Servle
     rd.forward(req, res);
   }
 
-  public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException{
+  public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
     String correo = req.getParameter("correo");
     String contrasena = req.getParameter("contrasena");
 
-    LoginImpl loginImpl = new LoginImpl();
+    try {
+        if (correo == null || correo.trim().isEmpty()) {
+            throw new LoginException("El correo no puede estar vacío.");
+        }
+        if (contrasena == null || contrasena.trim().isEmpty()) {
+            throw new LoginException("La contraseña no puede estar vacía.");
+        }
 
-     Cuenta login = loginImpl.getByEmail(correo);
+        LoginImpl loginImpl = new LoginImpl();
+        Cuenta login;
+        try {
+            login = loginImpl.getByEmail(correo);
+        } catch (SQLException | RuntimeException e) {
+            throw new LoginException("Error al buscar el usuario en la base de datos.");
+        }
 
-      if(correo != null && contrasena.equals(login.getContrasena())){
-        
-           HttpSession session = req.getSession();
-          session.setAttribute("logueado", "true");
-          res.sendRedirect("inicio");
+        if (login != null && PasswordUtils.verifyPassword(contrasena, login.getContrasena())) {
 
-      }else{
-          res.sendRedirect("login");
+            HttpSession session = req.getSession();
+            session.setAttribute("logueado", "true");
+            session.setAttribute("tipo", login.getTipo());
+            res.sendRedirect("inicio");
 
-      }
+        } else {
+            req.setAttribute("mensajeError", "Credenciales incorrectas");
+            RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
+            rd.forward(req, res);
+        }
 
-
-
-
-    
-    
+    } catch (LoginException e) {
+        req.setAttribute("mensajeError", e.getMessage());
+        RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
+        rd.forward(req, res);
+    }
   }
 
 

@@ -6,13 +6,13 @@
 
      <div class="seccionGaleria">
             <div class="galeria2" data-anijs="if: scroll, on: window, do: animate__fadeIn animated, before: $scrollReveal repeat">
-                <h2>Galery</h2>
+                <h2>Galeria</h2>
 
                 <div class="imagenes">
                      <c:forEach items="${imagenes}" var="item">
                          <div class="imagen imggalery">
                               <img src="/mostrarFoto?foto=${item.foto}" alt="${item.nombre} ${item.alt}"/>
-                              <c:if test="${sessionScope.logueado != null}">
+                              <c:if test="${sessionScope.tipo == 'admin'}">
                                         <div class="action">
                                         <a href="/editar?id=${item.id}">
                                         <i class="fa-solid fa-pencil" ></i>
@@ -26,7 +26,7 @@
                     
                      
                     </div>
-                    <c:if test="${sessionScope.logueado != null}">
+                    <c:if test="${sessionScope.tipo == 'admin'}">
                       <a class="uploadbtn" href="/subir">Subir Imágen</a>
                    </c:if>
                        

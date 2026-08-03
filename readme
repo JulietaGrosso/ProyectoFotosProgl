@@ -2,15 +2,10 @@
 # Proyecto de Fotografía
 
 Este proyecto es una aplicación web desarrollada en Java con JSP y MySQL, que permite administrar una galería de fotografías.
-Cuenta con un único usuario administrador, quien puede:
+Cuenta con dos tipos de usuarios:
 
-- Iniciar sesión con su cuenta.
-
-- Subir nuevas imágenes a la galería.
-
-- Editar o eliminar imágenes existentes.
-
-- Visualizar todas las imágenes almacenadas.
+- **Administrador**: puede iniciar sesión, subir nuevas imágenes, editar o eliminar imágenes existentes y visualizar la galería.
+- **Usuario**: puede iniciar sesión y visualizar la galería, pero solo tiene acceso al botón de Logout (no puede subir, editar ni borrar imágenes).
 
 - Los visitantes del sitio pueden ver la galería pero no modificarla.
 
@@ -50,12 +45,17 @@ CREATE TABLE `cuenta` (
   `nombre` VARCHAR(45) NOT NULL,
   `correo` VARCHAR(100) NOT NULL,
   `contrasena` VARCHAR(100) NOT NULL,
+  `tipo` VARCHAR(20) NOT NULL DEFAULT 'usuario',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insertar cuenta del administrador
-INSERT INTO `cuenta` (`nombre`, `correo`, `contrasena`)
-VALUES ('Julieta', 'julieta.grosso02@gmail.com', '1234');
+-- Insertar cuenta del administrador (contraseña '1234' con hash BCrypt)
+INSERT INTO `cuenta` (`nombre`, `correo`, `contrasena`, `tipo`)
+VALUES ('Julieta', 'julieta.grosso02@gmail.com', '$2a$10$9NHhQgU6zTk6BL6gB1dcoOrYRtv9ucdXQAGmZ06ab3T45.6gKfWuq', 'admin');
+
+-- Insertar cuenta de usuario regular (contraseña '1234' con hash BCrypt)
+INSERT INTO `cuenta` (`nombre`, `correo`, `contrasena`, `tipo`)
+VALUES ('Usuario Demo', 'usuario@demo.com', '$2a$10$uoYFoOFaLZRvqA75mAyvUO1McWROZSsPm1bQgADAuo24BsexODsr.', 'usuario');
 
 
 DROP TABLE IF EXISTS `imagen`;
@@ -67,6 +67,14 @@ CREATE TABLE `imagen` (
   `alt` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+> **Nota sobre las contraseñas:** Las contraseñas se almacenan con hash BCrypt usando `PasswordUtils.hashPassword()`. Al hacer login, la verificación se realiza con `PasswordUtils.verifyPassword()`. Nunca se guardan ni comparan contraseñas en texto plano.
+>
+> Para generar un nuevo hash de contraseña, puede ejecutar:
+> ```java
+> System.out.println(PasswordUtils.hashPassword("su_contraseña"));
+> ```
 
 
 # Ejecución

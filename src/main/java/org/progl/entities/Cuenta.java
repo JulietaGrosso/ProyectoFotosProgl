@@ -5,17 +5,19 @@ public class Cuenta {
   private String nombre;
   private String correo;
   private String contrasena;
+  private String tipo;
 
   public Cuenta(){
     
   }
 
 
-  public Cuenta(int id, String nombre, String correo, String contrasena) {
+  public Cuenta(int id, String nombre, String correo, String contrasena, String tipo) {
     this.id = id;
     this.nombre = nombre;
     this.correo = correo;
     this.contrasena = contrasena;
+    this.tipo = tipo;
   }
 
   public int getId() {
@@ -48,5 +50,13 @@ public class Cuenta {
 
   public void setContrasena(String contrasena) {
     this.contrasena = contrasena;
+  }
+
+  public String getTipo() {
+    return tipo;
+  }
+
+  public void setTipo(String tipo) {
+    this.tipo = tipo;
   }
 }

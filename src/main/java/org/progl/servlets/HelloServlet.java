@@ -2,8 +2,8 @@ package org.progl.servlets;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.progl.daos.ImagenImpl;
@@ -25,7 +25,12 @@ public class HelloServlet extends HttpServlet {
 
 
      ImagenImpl imagenImpl = new ImagenImpl();
-    List<Imagen> listaImagenes = imagenImpl.getAll();
+    List<Imagen> listaImagenes;
+    try {
+      listaImagenes = imagenImpl.getAll();
+    } catch (SQLException e) {
+      throw new ServletException("Error al obtener las imágenes de la base de datos.", e);
+    }
 
     List<Imagen> listaTemporal = new ArrayList<>();
     for(int i = 0; listaImagenes.size() > i; i++){
