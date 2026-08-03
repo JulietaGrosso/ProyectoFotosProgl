@@ -227,7 +227,7 @@ VALUES ('Julieta', 'julieta.grosso02@gmail.com', '$2a$10$9NHhQgU6zTk6BL6gB1dcoOr
 
 -- Insertar cuenta de usuario regular (contraseña '1234' con hash BCrypt)
 INSERT INTO `cuenta` (`nombre`, `correo`, `contrasena`, `tipo`)
-VALUES ('Usuario Demo', 'usuario@demo.com', '$2a$10$uoYFoOFaLZRvqA75mAyvUO1McWROZSsPm1bQgADAuo24BsexODsr.', 'usuario');
+VALUES ('Usuario Demo', 'test@gmail.com', '$2a$10$uoYFoOFaLZRvqA75mAyvUO1McWROZSsPm1bQgADAuo24BsexODsr.', 'usuario');
 
 DROP TABLE IF EXISTS `imagen`;
 
