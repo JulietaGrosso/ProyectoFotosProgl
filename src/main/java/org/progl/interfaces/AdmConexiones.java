@@ -27,8 +27,8 @@ INSTANCE;
       log.info("[DB-LOG] Iniciando configuración del pool HikariCP...");
 
       String envUrl  = System.getenv("DB_URL");
-      String envUser = System.getenv("DB_USER");
-      String envPass = System.getenv("DB_PASS");
+      String envUser = System.getenv("DB_USERNAME");
+      String envPass = System.getenv("DB_PASSWORD");
 
       HikariConfig config = new HikariConfig();
       config.setPoolName("ProyFotosPool");
