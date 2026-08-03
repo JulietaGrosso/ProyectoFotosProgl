@@ -15,7 +15,6 @@ import org.progl.interfaces.Dao;
 
 
 public class LoginImpl implements Dao<Cuenta,String>{
-  private Connection conn= null;
 
 
   private  static final String  SQL_GETBYEMAIL= "SELECT * FROM cuenta WHERE correo = ? " ;
@@ -23,41 +22,27 @@ public class LoginImpl implements Dao<Cuenta,String>{
    
 
     public Cuenta getByEmail(String correo) throws SQLException {
-          conn = AdmConexiones.INSTANCE.obtenerConexion();
-        // Se crea un statement
-        PreparedStatement pst = null;
-        ResultSet rs = null;
-        boolean existe = false;
         Cuenta cuenta = null;
 
-         try {
-          pst = conn.prepareStatement(SQL_GETBYEMAIL); // CREO STATEMENT
-          pst.setString(1,correo);
-          rs = pst.executeQuery(); //EJECUTO CONSULTA
-          // SI LA CONSULTA DEVUELVE AL MENOS UN REGISTRO, EXISTE
-          if (rs.next()) {
-             cuenta = new Cuenta();
-              // asigno los datos a auto
-              cuenta.setId(rs.getInt("id"));
-              cuenta.setNombre(rs.getString("nombre"));
-              cuenta.setCorreo(rs.getString("correo"));
-              cuenta.setContrasena(rs.getString("contrasena"));
-              cuenta.setTipo(rs.getString("tipo"));
-           
-             
+        try (Connection conn = AdmConexiones.INSTANCE.obtenerConexion();
+             PreparedStatement pst = conn.prepareStatement(SQL_GETBYEMAIL)) {
+
+            pst.setString(1, correo);
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    cuenta = new Cuenta();
+                    cuenta.setId(rs.getInt("id"));
+                    cuenta.setNombre(rs.getString("nombre"));
+                    cuenta.setCorreo(rs.getString("correo"));
+                    cuenta.setContrasena(rs.getString("contrasena"));
+                    cuenta.setTipo(rs.getString("tipo"));
+                }
             }
 
-            // Cierro Resultset y Statement
-            rs.close();
-            pst.close();
-            conn.close();
-          } catch (SQLException e) {
-            rs.close();
-            pst.close();
-            conn.close();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
-          }
-          return cuenta;
+        }
+        return cuenta;
   }
 
 
