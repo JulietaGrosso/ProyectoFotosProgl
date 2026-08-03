@@ -9,9 +9,6 @@ WORKDIR /app
 # Copiar el pom.xml primero para cachear dependencias
 COPY pom.xml ./
 
-# Descargar dependencias (cache layer)
-RUN mvn dependency:go-offline -B
-
 # Copiar todo el código fuente
 COPY src ./src
 
