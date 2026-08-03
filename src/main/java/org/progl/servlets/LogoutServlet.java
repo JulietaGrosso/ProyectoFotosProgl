@@ -2,6 +2,8 @@ package org.progl.servlets;
 
 import java.io.IOException;
 
+import org.progl.exceptions.LoginException;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,8 +17,12 @@ public class LogoutServlet extends HttpServlet{
 
         HttpSession session = req.getSession(false); 
         if (session != null) {
-        session.invalidate(); 
-}
+            try {
+                session.invalidate(); 
+            } catch (IllegalStateException e) {
+                throw new LoginException("Error al cerrar la sesión.");
+            }
+        }
         res.sendRedirect("inicio");
     }
 

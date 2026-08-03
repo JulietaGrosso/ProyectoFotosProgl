@@ -10,11 +10,11 @@ import java.util.List;
 
 import org.progl.entities.Cuenta;
 import org.progl.entities.Imagen;
-import org.progl.interfaces.AdminConexiones;
+import org.progl.interfaces.AdmConexiones;
 import org.progl.interfaces.Dao;
 
 
-public class LoginImpl implements Dao<Cuenta,String>, AdminConexiones{
+public class LoginImpl implements Dao<Cuenta,String>{
   private Connection conn= null;
 
 
@@ -22,8 +22,8 @@ public class LoginImpl implements Dao<Cuenta,String>, AdminConexiones{
 
    
 
-    public Cuenta getByEmail(String correo) {
-          conn = AdminConexiones.obtenerConexion();
+    public Cuenta getByEmail(String correo) throws SQLException {
+          conn = AdmConexiones.INSTANCE.obtenerConexion();
         // Se crea un statement
         PreparedStatement pst = null;
         ResultSet rs = null;
@@ -42,6 +42,7 @@ public class LoginImpl implements Dao<Cuenta,String>, AdminConexiones{
               cuenta.setNombre(rs.getString("nombre"));
               cuenta.setCorreo(rs.getString("correo"));
               cuenta.setContrasena(rs.getString("contrasena"));
+              cuenta.setTipo(rs.getString("tipo"));
            
              
             }
@@ -51,6 +52,9 @@ public class LoginImpl implements Dao<Cuenta,String>, AdminConexiones{
             pst.close();
             conn.close();
           } catch (SQLException e) {
+            rs.close();
+            pst.close();
+            conn.close();
             throw new RuntimeException(e);
           }
           return cuenta;

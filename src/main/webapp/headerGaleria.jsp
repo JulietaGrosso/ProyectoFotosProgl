@@ -19,11 +19,14 @@
             <div class="titulo">
                  <a href="/inicio"><img src="./images/logob2.png" alt="logo"></a>
              </div>
+            <button class="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <div class="menu">
                 <a href="/inicio">Home</a>
-                <a href="/galeria">Galery</a>
-                <a href="/#AboutMe">About Me</a>
-                <a href="/#elContacto">Contact</a>
+                <a href="/galeria">Galeria</a>
+                <a href="/#AboutMe">Sobre mi</a>
+                <a href="/contactar">Contactar</a>
                 <c:if test="${sessionScope.logueado == null}">
                    <a href="/login">Login</a>
                 </c:if>
@@ -35,3 +38,29 @@
              </div>
     </div>
     </header>
+    <script>
+(function () {
+    var toggle = document.querySelector('.menuToggle');
+    var nav = document.querySelector('.nav');
+    if (!toggle || !nav) return;
+    var icon = toggle.querySelector('i');
+
+    toggle.addEventListener('click', function () {
+        var abierto = nav.classList.toggle('menuAbierto');
+        toggle.setAttribute('aria-expanded', abierto);
+        toggle.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+        icon.classList.toggle('fa-bars', !abierto);
+        icon.classList.toggle('fa-xmark', abierto);
+    });
+
+    nav.querySelectorAll('.menu a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            nav.classList.remove('menuAbierto');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Abrir menú');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+        });
+    });
+})();
+</script>

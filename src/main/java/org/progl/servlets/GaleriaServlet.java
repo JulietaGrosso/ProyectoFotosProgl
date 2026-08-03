@@ -2,7 +2,7 @@ package org.progl.servlets;
 
 
 import java.io.IOException;
-import java.util.Date;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.progl.daos.ImagenImpl;
@@ -21,7 +21,12 @@ public class GaleriaServlet extends HttpServlet {
   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
     ImagenImpl imagenImpl = new ImagenImpl();
-    List<Imagen> listaImagenes = imagenImpl.getAll();
+    List<Imagen> listaImagenes;
+    try {
+      listaImagenes = imagenImpl.getAll();
+    } catch (SQLException e) {
+      throw new ServletException("Error al obtener las imágenes de la base de datos.", e);
+    }
     req.setAttribute("imagenes", listaImagenes);
     RequestDispatcher rd = req.getRequestDispatcher("/galeria.jsp");
     rd.forward(req, res);

@@ -15,10 +15,15 @@
   }
 
 
+html {
+    overflow-x: hidden;
+}
+
 body{
     background-color:rgb(230, 140, 89);
     margin:0;
     padding:0;
+    overflow-x: hidden;
 
 }
 header{
@@ -234,7 +239,16 @@ header .imagenSuperior h1{
     top: 40px;
     width: 100%;
     padding: 20px 0px;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.sobreMi .paraPorfolio .experienciaBloque{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .sobreMi .paraPorfolio ul{
     font-size: 15px;
@@ -244,6 +258,43 @@ header .imagenSuperior h1{
     align-items: flex-start;
 }
 
+.sobreMi .paraPorfolio .contactoSobreMi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.sobreMi .paraPorfolio .contactoSobreMi a{
+    color: #2F422E;
+    text-decoration: none;
+    font-family: "BohemianSoul", serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in;
+}
+.sobreMi .paraPorfolio .contactoSobreMi a:hover{
+    color: #3A5A40;
+}
+.sobreMi .paraPorfolio .contactoSobreMi .circuloFlecha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #2F422E;
+    border-radius: 50%;
+    color: #2F422E;
+    transition: all 0.3s ease-in;
+}
+.sobreMi .paraPorfolio .contactoSobreMi .circuloFlecha i{
+    font-size: 22px;
+}
+.sobreMi .paraPorfolio .contactoSobreMi .circuloFlecha:hover{
+    background-color: #2F422E;
+    color: #DAD7CD;
+    transform: translateX(4px);
+}
 
 footer{
     background-color:#3A5A40;
@@ -353,16 +404,49 @@ footer .pieDePagina .contacto a {
     border: 1.5px solid #3A5A40;
     color: #3A5A40;
     font-weight: 600;
+    text-decoration: none;
+}
+
+.loginform {
+    background: #DAD7CD;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.loginform label {
+    color: #3A5A40;
+    font-weight: 600;
+}
+
+.loginform input {
+    border-radius: 5px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 4px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .loginform button {
     margin-top: 12px;
     background: none;
     border-radius: 5px;
-    padding: 4px 18px;
+    padding: 8px 24px;
     border: 1.5px solid #3A5A40;
     color: #3A5A40;
     font-weight: 600;
+    cursor: pointer;
+}
+
+.loginform button:hover {
+    background-color: #3A5A40;
+    color: white;
 }
 
 .loginForm label {
@@ -378,15 +462,17 @@ footer .pieDePagina .contacto a {
     padding: 4px 18px;
     /* background: #dee9e0; */
 }
-.formSubir button {
-    margin-top: 12px;
-    background: none;
-    border-radius: 5px;
-    padding: 4px 18px;
-    border: 1.5px solid #3A5A40;
-    color: #3A5A40;
-    font-weight: 600;
+.formSubir {
+    background: #DAD7CD;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
 }
+
 .formSubir label {
     color: #3A5A40;
     font-weight: 600;
@@ -398,6 +484,9 @@ footer .pieDePagina .contacto a {
     border: 1.5px solid #3A5A40;
     color: #3A5A40;
     padding: 4px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
     /* background: #dee9e0; */
 }
 .formSubir input[type="file"] {
@@ -405,12 +494,19 @@ footer .pieDePagina .contacto a {
     padding: 0;
     color: inherit;
 }
+
+.formSubir .botonesForm {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
 .btnSubir {
     display: inline-block;
     margin-top: 8px;
     background: none;
     border-radius: 5px;
-    padding: 4px 18px;
+    padding: 8px 24px;
     border: 1.5px solid #3A5A40;
     color: #3A5A40;
     font-weight: 600;
@@ -418,6 +514,83 @@ footer .pieDePagina .contacto a {
 }
 
 .btnSubir:hover {
+    background-color: #3A5A40;
+    color: white;
+}
+
+.btnCancelar {
+    display: inline-block;
+    margin-top: 8px;
+    background: none;
+    border-radius: 5px;
+    padding: 8px 24px;
+    border: 1.5px solid #C0392B;
+    color: #C0392B;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btnCancelar:hover {
+    background-color: #C0392B;
+    color: white;
+}
+
+.formEditar {
+    background: #DAD7CD;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.formEditar label {
+    color: #3A5A40;
+    font-weight: 600;
+}
+
+.formEditar input {
+    border-radius: 5px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 4px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.formEditar input[type="hidden"] {
+    display: none;
+}
+
+.formEditar img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.formEditar .botonesForm {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.formEditar button {
+    display: inline-block;
+    margin-top: 8px;
+    background: none;
+    border-radius: 5px;
+    padding: 8px 24px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.formEditar button:hover {
     background-color: #3A5A40;
     color: white;
 }
@@ -434,3 +607,789 @@ footer .pieDePagina .contacto a {
         padding: 5px 10px;
         border-radius: 12px;
     }
+
+/* ===== Sección Contactar ===== */
+.cardContacto {
+    background: #DAD7CD;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.cardContactoIntro {
+    color: #3A5A40;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.mensajeExito {
+    background: #3A5A40;
+    color: #DAD7CD;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.formContactar label {
+    color: #3A5A40;
+    font-weight: 600;
+}
+.formContactar input {
+    border-radius: 5px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 4px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.formContactar textarea {
+    border-radius: 5px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 8px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: inherit;
+}
+.formContactar select {
+    border-radius: 5px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    padding: 6px 14px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233A5A40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+.formContactar select:focus {
+    outline: none;
+    border-color: #3A5A40;
+    box-shadow: 0 0 0 2px rgba(58, 90, 64, 0.2);
+}
+.formContactar button {
+    margin-top: 12px;
+    background: none;
+    border-radius: 5px;
+    padding: 8px 24px;
+    border: 1.5px solid #3A5A40;
+    color: #3A5A40;
+    font-weight: 600;
+    cursor: pointer;
+}
+.formContactar button:hover {
+    background-color: #3A5A40;
+    color: white;
+}
+.formContactar .botonesForm {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+.formContactar .botonesForm button {
+    margin-top: 8px;
+}
+.mensajeError {
+    background: #a3b18a;
+    color: #3A5A40;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ===== Pantalla de error ===== */
+.errorCard {
+    background: #DAD7CD;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+.errorIcon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+.errorBadge {
+    display: inline-block;
+    background: #3A5A40;
+    color: #DAD7CD;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.errorTitulo {
+    font-family: "Satisfy", cursive;
+    font-size: 35px;
+    color: #3A5A40;
+    margin-bottom: 10px;
+}
+.errorMensaje {
+    color: #3A5A40;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.errorUri {
+    background: #a3b18a;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.errorUri code {
+    color: #3A5A40;
+    font-size: 14px;
+}
+.errorBotones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.errorBotones .btnSubir {
+    text-decoration: none;
+    display: inline-block;
+}
+.errorAyuda {
+    color: #3A5A40;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ===== Header responsive: botón hamburguesa ===== */
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #DAD7CD;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px 14px;
+    margin-right: 20px;
+    z-index: 10;
+    transition: color 0.3s ease-in, transform 0.3s ease-in;
+}
+.menuToggle:hover {
+    color: #a3b18a;
+}
+.menuToggle:active {
+    transform: scale(0.92);
+}
+
+@media (max-width: 768px) {
+    .menuToggle {
+        display: block;
+    }
+
+    header .nav {
+        position: relative;
+        min-height: 90px;
+    }
+
+    header .nav .titulo img {
+        height: 55px;
+        margin: 15px;
+        padding-left: 10px;
+    }
+
+    header .nav .menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: min(280px, 80%);
+        margin: 0;
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        background-color: rgba(58, 90, 64, 0.35);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(218, 215, 205, 0.18);
+        border-right: none;
+        border-radius: 0 0 0 14px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        transform: translateX(110%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.3s ease-in, visibility 0.3s ease-in;
+        z-index: 9;
+    }
+
+    header .nav.rellenarNav .menu {
+        background-color: #3A5A40;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+    }
+
+    header .nav.menuAbierto .menu {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    header .menu a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 26px;
+        margin: 0;
+        font-size: 23px;
+        border-bottom: 1px solid rgba(218, 215, 205, 0.15);
+        transition: background-color 0.3s ease-in, color 0.3s ease-in, padding-left 0.3s ease-in;
+    }
+
+    header .menu a:last-child {
+        border-bottom: none;
+    }
+
+    header .menu a:hover {
+        background-color: rgba(163, 177, 138, 0.25);
+        color: #DAD7CD;
+        padding-left: 34px;
+    }
+
+    header .imagenSuperior h1 {
+        font-size: 38px;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .nav .titulo img {
+        height: 45px;
+        margin: 10px;
+        padding-left: 5px;
+    }
+
+    .menuToggle {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+
+    header .nav .menu {
+        width: min(240px, 85%);
+    }
+
+    header .menu a {
+        font-size: 20px;
+        padding: 12px 22px;
+    }
+
+    header .imagenSuperior h1 {
+        font-size: 30px;
+    }
+}
+
+/* ===== Sección espacioFrase responsive ===== */
+.espacioFrase {
+    box-sizing: border-box;
+    padding: 0 40px;
+}
+
+.espacioFrase h1 {
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .espacioFrase {
+        padding: 0 30px;
+    }
+
+    .espacioFrase h1 {
+        font-size: clamp(24px, 4vw, 32px);
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .espacioFrase {
+        height: auto;
+        min-height: 60vh;
+        padding: 40px 24px;
+    }
+
+    .espacioFrase h1 {
+        font-size: clamp(20px, 5.5vw, 26px);
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .espacioFrase {
+        padding: 30px 16px;
+    }
+
+    .espacioFrase h1 {
+        font-size: clamp(18px, 6vw, 22px);
+    }
+
+    .espacioFrase h1 br {
+        display: none;
+    }
+}
+
+/* ===== Carrusel de galería responsive ===== */
+@media (max-width: 992px) {
+    .galeria {
+        height: auto;
+        min-height: 70vh;
+        padding: 40px 0;
+    }
+
+    .galeria .carrete {
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .galeria .carrete .imagenes {
+        width: 240px;
+        height: 240px;
+        margin: 0;
+    }
+
+    .galeria .carrete .imagenes img {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        min-height: 60vh;
+        padding: 30px 0;
+    }
+
+    .galeria h2 {
+        font-size: 34px;
+        padding-bottom: 25px;
+    }
+
+    .galeria .carrete {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    /* 1 imagen por slide (JS reagrupa los slides en mobile) */
+    .galeria .carrete .imagenes {
+        width: min(320px, 80vw);
+        height: min(320px, 80vw);
+        margin: 0;
+    }
+
+    .galeria .carrete .imagenes img {
+        margin: 0;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria h2 {
+        font-size: 28px;
+        padding-bottom: 20px;
+    }
+
+    .galeria .carrete .imagenes {
+        width: min(280px, 85vw);
+        height: min(280px, 85vw);
+    }
+}
+
+/* ===== Sección sobreMi responsive ===== */
+@media (max-width: 992px) {
+    .sobreMi {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+    .sobreMi .informacion {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0 30px;
+        border-radius: 12px;
+    }
+
+    .sobreMi .informacion img {
+        width: min(243px, 70vw);
+        height: auto;
+        aspect-ratio: 243 / 400;
+        margin-top: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .sobreMi .informacion .infoDescripcion {
+        padding: 10px 24px;
+        text-align: center;
+    }
+
+    .sobreMi .informacion .infoDescripcion p {
+        font-size: clamp(20px, 3.5vw, 26px);
+    }
+
+    .sobreMi .paraPorfolio {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 20px 0 0;
+    }
+
+    .sobreMi .paraPorfolio .experienciaBloque {
+        align-items: center;
+        text-align: center;
+    }
+
+    .sobreMi .paraPorfolio ul {
+        align-items: center;
+        padding-left: 0;
+        list-style-position: inside;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobreMi {
+        padding: 30px 14px;
+    }
+
+    .sobreMi .informacion .infoDescripcion {
+        padding: 10px 16px;
+    }
+
+    .sobreMi .informacion .infoDescripcion p {
+        font-size: 19px;
+    }
+
+    .sobreMi .paraPorfolio .experienciaBloque h4 {
+        font-size: 18px;
+    }
+
+    .sobreMi .paraPorfolio ul {
+        font-size: 14px;
+    }
+
+    .sobreMi .paraPorfolio .contactoSobreMi a {
+        font-size: 22px;
+    }
+
+    .sobreMi .paraPorfolio .contactoSobreMi .circuloFlecha {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+/* ===== Footer responsive (solo adaptación, no modifica reglas base) ===== */
+@media (max-width: 992px) {
+    footer {
+        height: auto;
+        min-height: 40vh;
+    }
+
+    footer .pieDePagina {
+        padding: 50px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        height: auto;
+        min-height: 0;
+    }
+
+    footer .pieDePagina {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        padding: 40px 24px;
+    }
+
+    footer .pieDePagina .logosPiePag img {
+        width: 90px;
+        height: 90px;
+    }
+
+    footer .pieDePagina .contacto p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+
+    footer .pieDePagina .contacto p br {
+        display: none;
+    }
+
+    footer .pieDePagina .contacto h3 {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .pieDePagina {
+        padding: 30px 16px;
+        gap: 18px;
+    }
+
+    footer .pieDePagina .logosPiePag img {
+        width: 70px;
+        height: 70px;
+    }
+
+    footer .pieDePagina .contacto p {
+        font-size: 13px;
+    }
+
+    footer .pieDePagina .contacto i {
+        font-size: 18px;
+    }
+}
+
+/* ===== Formulario de contacto responsive (solo adaptación) ===== */
+@media (max-width: 768px) {
+    .seccionGaleria .galeria2 {
+        padding: 20px 16px;
+    }
+
+    .seccionGaleria .galeria2 h2 {
+        font-size: 34px;
+        padding: 20px 10px 30px 10px;
+        text-align: center;
+    }
+
+    .cardContacto {
+        max-width: 100%;
+        width: 100%;
+        padding: 24px 20px;
+        margin: 0 0 30px 0;
+        box-sizing: border-box;
+    }
+
+    .cardContactoIntro {
+        font-size: 15px;
+    }
+
+    .formContactar input,
+    .formContactar select,
+    .formContactar textarea {
+        font-size: 16px; /* evita zoom automático en iOS */
+    }
+
+    .formContactar select {
+        padding: 10px 40px 10px 14px;
+        background-size: 18px;
+        background-position: right 12px center;
+        min-height: 44px; /* área táctil cómoda */
+    }
+
+    .formContactar .botonesForm {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .formContactar .botonesForm button,
+    .formContactar .botonesForm .btnCancelar {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccionGaleria .galeria2 {
+        padding: 14px 10px;
+    }
+
+    .seccionGaleria .galeria2 h2 {
+        font-size: 28px;
+        padding-bottom: 22px;
+    }
+
+    .cardContacto {
+        padding: 18px 14px;
+        border-radius: 10px;
+    }
+
+    .cardContactoIntro {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .formContactar select {
+        padding: 9px 36px 9px 12px;
+        background-size: 16px;
+        font-size: 15px;
+    }
+}
+
+/* ===== Botón flotante modo oscuro ===== */
+.darkModeToggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #3A5A40;
+    background-color: #DAD7CD;
+    color: #3A5A40;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.darkModeToggle:hover {
+    background-color: #3A5A40;
+    color: #DAD7CD;
+    transform: scale(1.1);
+}
+
+/* Botón flotante responsive */
+@media (max-width: 768px) {
+    .darkModeToggle {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .darkModeToggle {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark-mode header {
+    background-image: url(../images/luna.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    color: #DAD7CD;
+    position: relative;
+}
+
+.oscurecer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+body.dark-mode .espacioFrase {
+    background-color: #2A422E;
+}
+body.dark-mode header .rellenarNav {
+    background-color: #2A422E !important;
+}
+body.dark-mode footer {
+    background-color: #2A422E;
+}
+body.dark-mode .galeria {
+    background-color: #231F0D;
+}
+body.dark-mode .galeria h2,
+body.dark-mode .galeria2 h2 {
+    color: beige;
+    margin: 0%;
+    font-family: "Satisfy", cursive;
+    font-size: 45px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+body.dark-mode .seccionGaleria .galeria2 {
+    background-color: #231F0D;
+}
+body.dark-mode .loginform {
+    background: #232323;
+    color: #3A5A40;
+}
+body.dark-mode .formSubir {
+    background: #232323;
+    color: #3A5A40;
+}
+body.dark-mode .formEditar {
+    background: #232323;
+    color: #3A5A40;
+}
+body.dark-mode .cardContacto {
+    background: #232323;
+    color: #3A5A40;
+}
+body.dark-mode .errorCard {
+    background: #231F0D;
+}
+body.dark-mode .mensajeExito {
+    color: #231F0D;
+}
+body.dark-mode .sobreMi {
+    background-color: #231F0D;
+}
+body.dark-mode .sobreMi .informacion {
+    background-color: #3F492E;
+    color: #DAD7CD;
+}
+body.dark-mode .sobreMi .paraPorfolio .contactoSobreMi a {
+    color: #DAD7CD;
+}
+body.dark-mode .sobreMi .paraPorfolio .contactoSobreMi a:hover {
+    color: #a3b18a;
+}
+body.dark-mode .sobreMi .paraPorfolio .contactoSobreMi .circuloFlecha {
+    border-color: #DAD7CD;
+    color: #DAD7CD;
+}
+body.dark-mode .sobreMi .paraPorfolio .contactoSobreMi .circuloFlecha:hover {
+    background-color: #DAD7CD;
+    color: #3F492E;
+}
+body.dark-mode .darkModeToggle {
+    background-color: #231F0D;
+    color: #DAD7CD;
+    border-color: #DAD7CD;
+}
+body.dark-mode .darkModeToggle:hover {
+    background-color: #DAD7CD;
+    color: #231F0D;
+}

@@ -10,14 +10,17 @@
                  <form method="post" class="formEditar">
                    <input value="<%= request.getAttribute("id") %>" id="id"  name="id" style="height: 0; width: 0;" type="hidden"/>
                     <label for="nombre">Nombre</label><br>
-                    <input value="<%= request.getAttribute("nombre") %>" id="nombre" name="nombre"/>
+                    <input value="<%= request.getAttribute("nombre") %>" id="nombre" name="nombre" required/>
                     <br>
                      <label for="alt">Alt</label><br>
-                    <input  value="<%= request.getAttribute("alt") %>" type="text" id="alt" name="alt"/><br>
+                    <input  value="<%= request.getAttribute("alt") %>" type="text" id="alt" name="alt" required/><br>
                     <br>
                     <img width="100" height="100" src="/mostrarFoto?foto=<%= request.getAttribute("foto") %>"><br>
-                    <button type="submit">Editar Imagen</button>
-                 </form>         
+                    <div class="botonesForm">
+                        <button type="submit">Editar Imagen</button>
+                        <a href="galeria" class="btnCancelar">Cancelar</a>
+                    </div>
+                 </form>
            </div>
      </div>
 <%@ include file="footer.jsp" %>

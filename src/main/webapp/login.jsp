@@ -16,6 +16,9 @@
                     <input type="password" id="contrasena" name="contrasena"></imput>
                     <span class="mensaje-error"></span>
                     <br>
+                    <c:if test="${not empty mensajeError}">
+                        <span class="mensaje-error" style="color:red; display:block; margin-bottom:10px;">${mensajeError}</span>
+                    </c:if>
                     <button type="submit">Ingresar</button>
                  </form>         
            </div>
