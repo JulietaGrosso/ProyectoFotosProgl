@@ -9,34 +9,206 @@ Cuenta con dos tipos de usuarios:
 
 - Los visitantes del sitio pueden ver la galería pero no modificarla.
 
+---
 
+# Tabla de contenidos
+
+1. [Stack tecnológico](#stack-tecnológico)
+2. [Arquitectura del proyecto](#arquitectura-del-proyecto)
+3. [Estructura de directorios](#estructura-de-directorios)
+4. [Endpoints de la aplicación](#endpoints-de-la-aplicación)
+5. [Instalación](#instalación)
+6. [Configuración de base de datos](#configuración-de-base-de-datos)
+7. [Script de base de datos](#script-de-base-de-datos)
+8. [Seguridad y control de acceso](#seguridad-y-control-de-acceso)
+9. [Ejecución local](#ejecución-local)
+10. [Despliegue con Docker](#despliegue-con-docker)
+11. [Testing](#testing)
+
+---
+
+# Stack tecnológico
+
+| Componente | Tecnología | Versión |
+|------------|-----------|---------|
+| Lenguaje | Java | 17 (compilado con target 1.8) |
+| Plataforma | Jakarta EE | 9.1 (Servlet 5.0, JSP, JSTL 3.0) |
+| Servidor | Apache Tomcat | 10.1.55 (vía Cargo Maven Plugin) |
+| Base de datos | MySQL | 8+ con driver `mysql-connector-j 9.4.0` |
+| Pool de conexiones | HikariCP | 5.1.0 |
+| Hash de contraseñas | Spring Security Crypto | 5.8.0 (BCrypt) |
+| Testing | JUnit 5 + Mockito + AssertJ | 5.11 / 5.14 / 3.27 |
+| Build | Maven | 3.9+ |
+| Contenedor | Docker | Multi-etapa (Maven build → Tomcat runtime) |
+
+---
+
+# Arquitectura del proyecto
+
+La aplicación sigue el patrón **MVC (Modelo-Vista-Controlador)** con Servlets como controladores, JSP como vistas y DAOs para acceso a datos:
+
+```
+Petición HTTP → Servlet (Controlador) → DAO (Modelo) → Base de datos
+                    ↓
+              JSP (Vista) → Respuesta HTML
+```
+
+### Capas
+
+- **Servlets** (`org.progl.servlets`): reciben las peticiones HTTP, validan sesión/permisos, delegan en los DAOs y redirigen a las vistas JSP.
+- **DAOs** (`org.progl.daos`): implementan la interfaz genérica `Dao<O, K>` para acceso a datos con JDBC y `PreparedStatement`.
+- **Entities** (`org.progl.entities`): clases POJO que representan las tablas de la base de datos (`Cuenta`, `Imagen`).
+- **Interfaces** (`org.progl.interfaces`): `Dao<O, K>` (contrato genérico CRUD), `AdmConexiones` (singleton enum que gestiona el pool HikariCP), `AppContextListener` (cierra el pool al detener la app).
+- **Exceptions** (`org.progl.exceptions`): excepciones de dominio (`LoginException`, `ImagenException`, `ContactarException`).
+- **Utils** (`utils`): `PasswordUtils` para hash y verificación BCrypt.
+
+### Gestión de conexiones
+
+`AdmConexiones` es un **singleton (enum)** que inicializa un pool **HikariCP** al arrancar la aplicación. Soporta dos modos:
+
+- **Producción**: variables de entorno `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`.
+- **Desarrollo**: archivo `database.properties` del classpath.
+
+El `AppContextListener` (anotado con `@WebListener`) cierra el pool correctamente al detener la aplicación.
+
+---
+
+# Estructura de directorios
+
+```
+ProyectoFotosProgl/
+├── pom.xml
+├── Dockerfile
+├── readme
+├── conf/                       # Configuración de Tomcat (server.xml, web.xml, etc.)
+├── sql/                        # Scripts SQL
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── org/progl/
+│   │   │   │   ├── App.java
+│   │   │   │   ├── daos/
+│   │   │   │   │   ├── ImagenImpl.java      # CRUD de imágenes
+│   │   │   │   │   └── LoginImpl.java       # Búsqueda de usuarios por email
+│   │   │   │   ├── entities/
+│   │   │   │   │   ├── Cuenta.java           # Modelo de usuario
+│   │   │   │   │   └── Imagen.java           # Modelo de imagen
+│   │   │   │   ├── exceptions/
+│   │   │   │   │   ├── ContactarException.java
+│   │   │   │   │   ├── ImagenException.java
+│   │   │   │   │   └── LoginException.java
+│   │   │   │   ├── interfaces/
+│   │   │   │   │   ├── AdmConexiones.java    # Singleton pool HikariCP
+│   │   │   │   │   ├── AppContextListener.java
+│   │   │   │   │   └── Dao.java              # Interfaz genérica CRUD
+│   │   │   │   └── servlets/
+│   │   │   │       ├── BorrarImagenServlet.java
+│   │   │   │       ├── ContactoServlet.java
+│   │   │   │       ├── EditarImagenServlet.java
+│   │   │   │       ├── GaleriaServlet.java
+│   │   │   │       ├── HelloServlet.java
+│   │   │   │       ├── LoginServlet.java
+│   │   │   │       ├── LogoutServlet.java
+│   │   │   │       ├── MostrarFotoServlet.java
+│   │   │   │       └── SubirImagenServlet.java
+│   │   │   └── utils/
+│   │   │       └── PasswordUtils.java        # Hash BCrypt
+│   │   ├── resources/
+│   │   │   └── database.properties           # Config de BD (modo desarrollo)
+│   │   └── webapp/
+│   │       ├── index.jsp                     # Inicio con carrusel
+│   │       ├── login.jsp
+│   │       ├── galeria.jsp
+│   │       ├── subirImagen.jsp
+│   │       ├── editarImagen.jsp
+│   │       ├── contactar.jsp
+│   │       ├── errorPantalla.jsp
+│   │       ├── header.jsp / headerGaleria.jsp / footer.jsp
+│   │       ├── Styles.css
+│   │       ├── fuentes/
+│   │       ├── images/
+│   │       └── WEB-INF/
+│   │           └── web.xml
+│   └── test/
+│       └── java/org/progl/                   # Tests de entities, daos y servlets
+└── target/                                    # Salida del build (WAR)
+```
+
+---
+
+# Endpoints de la aplicación
+
+| URL | Servlet | Métodos | Acceso | Descripción |
+|-----|---------|---------|--------|-------------|
+| `/inicio` | `HelloServlet` | GET | Público | Página principal con carrusel de imágenes (agrupadas de a 3) |
+| `/login` | `LoginServlet` | GET, POST | Público | Formulario de login (GET) y validación de credenciales (POST) |
+| `/logout` | `LogoutServlet` | GET | Logueado | Cierra la sesión y redirige al inicio |
+| `/galeria` | `GaleriaServlet` | GET | Público | Listado completo de imágenes |
+| `/subir` | `SubirImagenServlet` | GET, POST | Admin | Formulario para subir imagen (GET) y guardado en disco + BD (POST) |
+| `/editar` | `EditarImagenServlet` | GET, POST | Admin | Formulario de edición (GET) y actualización en BD (POST) |
+| `/borrar` | `BorrarImagenServlet` | DELETE | Admin | Elimina imagen de la BD |
+| `/mostrarFoto` | `MostrarFotoServlet` | GET | Público | Sirve la imagen desde el disco al navegador |
+| `/contactar` | `ContactoServlet` | GET, POST | Logueado | Formulario de contacto (GET) y envío de mensaje (POST) |
+
+---
 
 # Instalación
 
-Para instalar el presente proyecto, se requiere ejecutar el siguiente comando: 
+Para compilar el proyecto y generar el archivo WAR, ejecutar:
 
-```js
-- mvn clean install
+```bash
+mvn clean package
 ```
 
-Mofificar el siguiente archivo con las credenciales que correspondan:
-```java
-src\main\java\org\progl\interfaces\AdminConexiones.java
-en la linea 13 asignar las credenciales correctas de la base de datos a utilixar.
-"jdbc:mysql://localhost:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";;
+> Si se desea compilar sin ejecutar los tests: `mvn clean package -DskipTests`
+
+---
+
+# Configuración de base de datos
+
+La aplicación soporta dos modos de configuración de conexión:
+
+### Modo desarrollo (archivo `database.properties`)
+
+Editar el archivo `src/main/resources/database.properties`:
+
+```properties
+db.driver=com.mysql.cj.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.user=root
+db.pass=root
+
+# Configuración del pool HikariCP
+hikari.maximumPoolSize=15
+hikari.minimumIdle=2
+hikari.connectionTimeout=10000
+hikari.idleTimeout=300000
+hikari.maxLifetime=600000
 ```
 
+### Modo producción (variables de entorno)
 
-# Ejecución script base de datos
+| Variable | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `DB_URL` | URL de conexión JDBC | `jdbc:mysql://mysql:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true` |
+| `DB_USERNAME` | Usuario de la base de datos | `root` |
+| `DB_PASSWORD` | Contraseña de la base de datos | `mi_password` |
+| `UPLOAD_DIR` | Carpeta donde se guardan las imágenes subidas | `/app/uploads` |
+
+> Si las variables de entorno están presentes, se usan automáticamente. Si no, se usa `database.properties`.
+
+---
+
+# Script de base de datos
 
 Para el correcto funcionamiento del proyecto se requiere crear la base de datos y tablas con el siguiente script:
 
 ```sql
-CREATE DATABASE IF NOT EXISTS proyectosfotos
+CREATE DATABASE IF NOT EXISTS proyectofotos
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_general_ci;
 
-USE proyectosfotos;
+USE proyectofotos;
 
 DROP TABLE IF EXISTS `cuenta`;
 
@@ -57,7 +229,6 @@ VALUES ('Julieta', 'julieta.grosso02@gmail.com', '$2a$10$9NHhQgU6zTk6BL6gB1dcoOr
 INSERT INTO `cuenta` (`nombre`, `correo`, `contrasena`, `tipo`)
 VALUES ('Usuario Demo', 'usuario@demo.com', '$2a$10$uoYFoOFaLZRvqA75mAyvUO1McWROZSsPm1bQgADAuo24BsexODsr.', 'usuario');
 
-
 DROP TABLE IF EXISTS `imagen`;
 
 CREATE TABLE `imagen` (
@@ -76,10 +247,107 @@ CREATE TABLE `imagen` (
 > System.out.println(PasswordUtils.hashPassword("su_contraseña"));
 > ```
 
+### Credenciales de prueba
 
-# Ejecución
+| Usuario | Email | Contraseña | Rol |
+|---------|-------|-----------|-----|
+| Julieta | julieta.grosso02@gmail.com | 1234 | admin |
+| Usuario Demo | usuario@demo.com | 1234 | usuario |
 
-Para levantar el presente proyecto, se requiere ejecutar el siguiente comando: 
-```js
+---
+
+# Seguridad y control de acceso
+
+### Autenticación
+
+- El login se realiza en `LoginServlet` con el email y contraseña.
+- La contraseña se verifica contra el hash BCrypt almacenado en la BD usando `PasswordUtils.verifyPassword()`.
+- Al autenticar correctamente, se crea una `HttpSession` con los atributos:
+  - `logueado` = `"true"`
+  - `tipo` = `"admin"` o `"usuario"`
+
+### Autorización por rol
+
+| Acción | Rol requerido |
+|--------|--------------|
+| Ver galería / inicio | Público (sin login) |
+| Subir imagen | Admin |
+| Editar imagen | Admin |
+| Borrar imagen | Admin |
+| Contactar | Logueado (admin o usuario) |
+| Logout | Logueado |
+
+Los servlets verifican la sesión con `session.getAttribute("tipo")`. Si no cumple el rol requerido, redirigen al inicio.
+
+### Manejo de errores
+
+- Páginas de error personalizadas configuradas en `web.xml`:
+  - Error 404 → `errorPantalla.jsp`
+  - Error 500 → `errorPantalla.jsp`
+  - Excepciones no capturadas → `errorPantalla.jsp`
+- Excepciones de dominio: `LoginException`, `ImagenException`, `ContactarException`.
+
+---
+
+# Ejecución local
+
+Para levantar el proyecto con Tomcat embebido (vía Cargo Maven Plugin), ejecutar:
+
+```bash
 mvn cargo:run
+```
+
+Esto descarga Tomcat 10.1.55, despliega el WAR y deja la aplicación disponible en:
+
+```
+http://localhost:8080/
+```
+
+---
+
+# Despliegue con Docker
+
+El proyecto incluye un `Dockerfile` multi-etapa que compila con Maven y despliega en Tomcat 10.1:
+
+### Construir la imagen
+
+```bash
+docker build -t proyectofotos .
+```
+
+### Ejecutar el contenedor
+
+```bash
+docker run -p 8080:8080 \
+  -e DB_URL="jdbc:mysql://host:3306/proyectofotos?useSSL=false&allowPublicKeyRetrieval=true" \
+  -e DB_USERNAME="root" \
+  -e DB_PASSWORD="tu_password" \
+  -e UPLOAD_DIR="/app/uploads" \
+  proyectofotos
+```
+
+La aplicación estará disponible en `http://localhost:8080/`.
+
+---
+
+# Testing
+
+El proyecto cuenta con **125 tests automatizados** usando JUnit 5, Mockito y AssertJ:
+
+| Capa | Tests | Descripción |
+|------|-------|-------------|
+| Entities | `CuentaTest`, `ImagenTest` | Validación de constructores, getters y setters |
+| DAOs | `LoginImplTest`, `ImagenImplTest` | Mocks de `Connection`, `PreparedStatement` y `ResultSet` |
+| Servlets | 8 clases de test | Mocks de `HttpServletRequest`, `HttpServletResponse` con Mockito |
+
+### Ejecutar los tests
+
+```bash
+mvn test
+```
+
+### Ejecutar build completo con tests
+
+```bash
+mvn clean package
 ```

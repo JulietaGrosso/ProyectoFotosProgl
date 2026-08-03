@@ -43,7 +43,7 @@
                         <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
 
                         <div class="botonesForm">
-                            <button type="button" onclick="goLinkWhatsap()">Enviar</button>
+                            <button type="button" onclick="verificarSesionYEnviar()">Enviar</button>
                             <a href="/inicio" class="btnCancelar">Cancelar</a>
                         </div>
                     </form>
@@ -72,6 +72,16 @@
 
         var url = 'https://wa.me/543482673265?text=' + texto;
         window.open(url, '_blank');
+    }
+
+    function verificarSesionYEnviar() {
+        var logueado = '${sessionScope.logueado}';
+        if (logueado === 'null' || logueado === '') {
+            alert('Debes iniciar sesión para contactar al servicio.');
+            window.location.href = '/login';
+            return;
+        }
+        goLinkWhatsap();
     }
 </script>
 <%@ include file="footer.jsp" %>
