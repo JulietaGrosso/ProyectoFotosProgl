@@ -109,6 +109,7 @@ public class EditarImagenServlet extends HttpServlet{
             res.sendRedirect("galeria");
 
         } catch (ImagenException e) {
+             e.printStackTrace();
             res.sendRedirect("galeria");
         } catch (SQLException e1) {
             res.sendRedirect("galeria");
