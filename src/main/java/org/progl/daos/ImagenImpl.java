@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.progl.entities.Imagen;
 import org.progl.interfaces.AdmConexiones;
@@ -14,6 +16,8 @@ import org.progl.interfaces.Dao;
 
 
 public class ImagenImpl implements Dao<Imagen,Integer>{
+
+  private static final Logger LOGGER = Logger.getLogger(ImagenImpl.class.getName());
 
  private static final String SQL_INSERT=
       "INSERT INTO imagen (foto, nombre, alt) " +
@@ -48,7 +52,7 @@ public class ImagenImpl implements Dao<Imagen,Integer>{
       }
 
     } catch (SQLException e) {
-        System.out.println("Error al obtener imágenes: " + e.getMessage());
+        LOGGER.log(Level.SEVERE, "Error al obtener imágenes: " + e.getMessage(), e);
         throw new RuntimeException(e);
     }
 
@@ -82,7 +86,7 @@ public class ImagenImpl implements Dao<Imagen,Integer>{
             }
 
         } catch (SQLException e) {
-           System.out.println("Error al insertar imagen: " + e.getMessage());
+           LOGGER.log(Level.SEVERE, "Error al insertar imagen: " + e.getMessage(), e);
            throw new RuntimeException(e);
         }
     }
@@ -99,6 +103,7 @@ public class ImagenImpl implements Dao<Imagen,Integer>{
                 pst.setString(1, imagen.getFoto());
                 pst.setString(2, imagen.getNombre());
                 pst.setString(3, imagen.getAlt());
+                pst.setInt(4, imagen.getId());
 
                 int resultado = pst.executeUpdate();
                 if (resultado == 1) {

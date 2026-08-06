@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.progl.daos.ImagenImpl;
 import org.progl.entities.Imagen;
@@ -25,6 +27,8 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/subir")
 @MultipartConfig
 public class SubirImagenServlet extends HttpServlet {
+
+  private static final Logger LOGGER = Logger.getLogger(SubirImagenServlet.class.getName());
   
 public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     HttpSession session = req.getSession(false);
@@ -74,6 +78,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws Servle
             try {
                 existeFoto = imagenImpl.existsByFoto(fileName);
             } catch (SQLException e) {
+                LOGGER.log(Level.SEVERE, "Error al verificar imagen en la BD (existsByFoto): " + e.getMessage(), e);
                 throw new ImagenException("Error al verificar la imagen en la base de datos.");
             }
             if (existeFoto) {
@@ -104,6 +109,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws Servle
                     }
                 }
             } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "Error al guardar la imagen en el servidor (IOException): " + e.getMessage(), e);
                 throw new ImagenException("Error al guardar la imagen en el servidor.");
             }
 
@@ -111,6 +117,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws Servle
             try {
                 imagenImpl.insert(imagen);
             } catch (SQLException | RuntimeException e) {
+                LOGGER.log(Level.SEVERE, "Error al insertar imagen en la BD (insert): " + e.getMessage(), e);
                 throw new ImagenException("Error al registrar la imagen en la base de datos.");
             }
 
